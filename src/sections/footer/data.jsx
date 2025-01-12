@@ -1,7 +1,6 @@
-import { AiOutlineInstagram } from "react-icons/ai";
-import { AiOutlineTwitter } from "react-icons/ai";
-import { AiOutlineDribbble } from "react-icons/ai";
-import { AiFillGithub } from "react-icons/ai";
+import { FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { RiMessengerLine } from "react-icons/ri";
 
 export const links = [
   { id: 1, link: "#", title: "Home" },
