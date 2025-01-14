@@ -4,6 +4,7 @@ import App from "./App";
 import { ModalProvider } from "./context/modal-context.jsx";
 import { ThemeProvider } from "./context/theme-context.jsx";
 import "./index.css";
+import "./globals.css";
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
