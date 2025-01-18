@@ -1,25 +1,51 @@
+import { useEffect } from "react";
+import HeaderImage from "../../assets/header.jpg";
+import data from "./data";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./header.css";
+
 const Header = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
-    <section className="bg-white px- py-20">
-      <div className="container mx-auto flex flex-col items-center text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Grow revenue with powerful marketing
-        </h1>
-        <p className="text-lg text-gray-600 mb-8">
-          {/* Add your short description here */}
-          Streamline your marketing efforts and achieve exponential growth with
-          our all-in-one platform.
+    <header id="header">
+      <div className="container header__container">
+        <div className="header__profile" data-aos="fade-in">
+          <img src={HeaderImage} alt="Header Portait" />
+        </div>
+        <h3 data-aos="fade-up">Tuan Kiet Nguyen </h3>
+        <p data-aos="fade-up">
+          To secure a challenging Front-End Developer position where I can
+          contribute my skills and experience in building user-friendly and
+          efficient web applications using modern technologies like ReactJS and
+          NextJS while continuously learning and growing in a dynamic
+          environment.
         </p>
-        <div className="flex space-x-4">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Get Started
-          </button>
-          <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded">
-            Learn More
-          </button>
+        <div className="header__cta" data-aos="fade-up">
+          <a href="#contact" className="btn primary">
+            Let's Talk
+          </a>
+          <a href="#portfolio" className="btn light">
+            My Work
+          </a>
+        </div>
+        <div className="header__socials">
+          {data.map((item) => (
+            <a
+              key={item.id}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.icon}
+            </a>
+          ))}
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 
